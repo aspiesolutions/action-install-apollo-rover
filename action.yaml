@@ -6,8 +6,6 @@ inputs:
 
 runs:
   using: "composite"
-  env:
-    HELLO: "world"
   steps:
   - name: Install Rover
     shell: bash
