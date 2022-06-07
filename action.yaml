@@ -1,13 +1,14 @@
 
 name: Install Apollo Rover
 inputs:
-  apollo_key:
+  apollo-key:
     required: true
 
 runs:
   using: "composite"
   steps:
   - name: Install Rover
+    shell: bash
     run: |
       curl -sSL https://rover.apollo.dev/nix/v0.1.0 | sh
       echo "$HOME/.rover/bin" >> $GITHUB_PATH
