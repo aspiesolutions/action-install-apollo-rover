@@ -6,10 +6,13 @@ inputs:
 
 runs:
   using: "composite"
+  env:
+    HELLO: "world"
   steps:
   - name: Install Rover
     shell: bash
     run: |
+      export APOLLO_KEY=${{inputs.apollo-key}}
       curl -sSL https://rover.apollo.dev/nix/v0.1.0 | sh
       echo "$HOME/.rover/bin" >> $GITHUB_PATH
 # env:
