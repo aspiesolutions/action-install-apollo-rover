@@ -6,11 +6,11 @@ inputs:
 
 runs:
   using: "composite"
-env:
-  APOLLO_KEY: ${{inputs.APOLLO_KEY}}
-  APOLLO_VCS_COMMIT: ${{ github.event.pull_request.head.sha }}
-steps:
+  steps:
   - name: Install Rover
     run: |
       curl -sSL https://rover.apollo.dev/nix/v0.1.0 | sh
       echo "$HOME/.rover/bin" >> $GITHUB_PATH
+env:
+  APOLLO_KEY: ${{inputs.APOLLO_KEY}}
+  APOLLO_VCS_COMMIT: ${{ github.event.pull_request.head.sha }}
