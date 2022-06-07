@@ -3,7 +3,6 @@ name: Install Apollo Rover
 inputs:
   apollo_key:
     required: true
-outputs:
 
 runs:
   using: "composite"
